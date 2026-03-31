@@ -19,13 +19,3 @@ class MbankAccountsSchemaTest {
                 .body(matchesJsonSchemaInClasspath("accounts.schema.json"));
     }
 }
-    @Test
-    void shouldFailWhenCurrencyIsInvalid() {
-        given()
-            .baseUri("http://localhost:9999/api/v1")
-            .when()
-            .get("/demo/accounts")
-            .then()
-            .statusCode(200)
-            .body(matchesJsonSchemaInClasspath("accounts.schema.json"));
-}
